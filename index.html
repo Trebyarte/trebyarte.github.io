@@ -51,17 +51,47 @@
       font-size: 0.9em;
       color: #777;
     }
+    .hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  max-width: 500px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 48px;
+}
+
+.hero-text p {
+  margin-top: 10px;
+  font-size: 18px;
+}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="hero">
+  <img src="Foto1.jpg" alt="Juguete de madera">
+
+  <div class="hero-text">
     <h1>Trebyarte</h1>
     <p>
       Juguetes y juegos de madera artesanales.  
       Hechos a mano, a pedido y pensados para estimular la creatividad.
     </p>
+  </div>
+</div>
 
-    <img src="Foto1.jpg" alt="Juguete de madera">
     <img src="Foto2.jpg" alt="Juego artesanal">
 
     <div class="buttons">
