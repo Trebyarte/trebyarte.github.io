@@ -58,7 +58,7 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* dos columnas */
   gap: 30px;                             /* separación exacta */
-  padding: 0 60px;
+  padding: 0 80px;
 }
 
 .item {
@@ -76,8 +76,8 @@ main.gallery {
   display: grid !important;
   grid-template-columns: repeat(2, 1fr) !important;
   gap: 30px !important;
-  padding-left: 60px !important;
-  padding-right: 60px !important;
+  padding-left: 80px !important;
+  padding-right: 80px !important;
 }
 
 main.gallery .item {
