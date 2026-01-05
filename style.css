@@ -45,3 +45,22 @@ body {
   font-size: 30px;
   letter-spacing: 1px;
 }
+@media (max-width: 600px) {
+  .header-left {
+    left: 12px;
+  }
+
+  .header-right {
+    right: 12px;
+  }
+
+  .header-left img,
+  .header-right img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .header-center {
+    font-size: 22px;
+  }
+}
