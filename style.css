@@ -1,5 +1,5 @@
 <style>
-/* RESET BÁSICO */
+/* RESET */
 * {
   box-sizing: border-box;
 }
@@ -22,23 +22,19 @@ header {
   background: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0 20px;
   border-bottom: 1px solid #eee;
   z-index: 1000;
 }
 
-/* GRUPOS DE ICONOS */
-.header-left,
-.header-right {
+/* ICONOS */
+.header-icons {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* ICONOS */
-.header-left img,
-.header-right img {
+.header-icons img {
   width: 22px;
   height: 22px;
   opacity: 0.7;
@@ -46,41 +42,54 @@ header {
   cursor: pointer;
 }
 
-.header-left img:hover,
-.header-right img:hover {
+.header-icons img:hover {
   opacity: 1;
 }
 
-/* TITULO CENTRAL */
-.header-center {
+/* TITULO */
+.header-title {
   font-family: 'Indie Flower', cursive;
   font-size: 26px;
-  text-align: center;
-  flex: 1;
-  margin: 0 10px;
+  margin: 0 auto;
   white-space: nowrap;
 }
 
-/* CONTENIDO PRINCIPAL */
+/* MAIN */
 main {
-  padding-top: 90px; /* espacio para el header fijo */
+  padding-top: 90px;
 }
 
-/* RESPONSIVE - CELULAR */
+/* =========================
+   RESPONSIVE - CELULAR
+========================= */
 @media (max-width: 600px) {
+
   header {
     height: 60px;
     padding: 0 14px;
   }
 
-  .header-left img,
-  .header-right img {
+  /* contenedor general */
+  header {
+    justify-content: space-between;
+  }
+
+  /* iconos se separan */
+  .header-icons {
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .header-icons img {
     width: 18px;
     height: 18px;
   }
 
-  .header-center {
+  .header-title {
     font-size: 22px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   main {
