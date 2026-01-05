@@ -54,11 +54,16 @@ header {
 }
 </style>
 /* GALERIA */
+/* GALERIA */
 .gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 30px;
+  gap: 15px;                 /* espacio entre imágenes */
+  padding: 0 30px;           /* margen izquierda y derecha */
+}
+
+.item {
+  display: block;
 }
 
 .item img {
@@ -68,13 +73,13 @@ header {
   display: block;
 }
 
-/* Primera imagen más alta */
+/* Primera imagen más grande */
 .item.large {
-  height: 50vh; /* media pantalla */
+  height: 50vh;              /* media pantalla */
 }
 
-/* Las demás */
-.item {
+/* Segunda imagen (por ahora) */
+.item:not(.large) {
   height: 35vh;
 }
 
@@ -82,7 +87,7 @@ header {
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: 1fr;
-    padding: 20px;
+    padding: 0 20px;
   }
 
   .item,
