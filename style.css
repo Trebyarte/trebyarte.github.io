@@ -49,11 +49,7 @@ header {
   letter-spacing: 1px;
 }
 
-    padding-top: 130px;
-  }
-}
-</style>
-/* GALERIA */
+/* GALERÍA */
 .gallery {
   column-count: 2;
   column-gap: 30px;
@@ -71,36 +67,10 @@ header {
   display: block;
 }
 
-.item {
-  display: block;
-}
-
-.item img {
-  width: 100%;
-  height: auto;     /* CLAVE */
-  display: block;
-}
-/* ====== FORZAR GALERÍA ====== */
-
-main.gallery .item {
-  width: 100% !important;
-  display: block !important;
-}
-
-main.gallery img {
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: unset !important;
-  display: block !important;
-}
-
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
   .gallery {
     column-count: 1;
     padding: 0 20px;
   }
-}
-
 }
