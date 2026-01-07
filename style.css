@@ -37,6 +37,17 @@ header {
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
+.header-mail {
+  position: absolute;
+  right: 20px;
+}
+
+.header-mail img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
 
 .header-icons img:hover {
   opacity: 1;
