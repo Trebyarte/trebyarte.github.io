@@ -78,6 +78,23 @@ header {
 
 /* MOBILE */
 @media (max-width: 768px) {
+    .gallery .item:first-child {
+    margin-top: 12px;
+  }
+}
+   header {
+    height: 56px;
+  }
+
+  .header-title {
+    font-size: 26px;
+  }
+
+  .header-icons img {
+    width: 18px;
+    height: 18px;
+  }
+}
   .gallery {
     column-count: 1;
     padding: 0 20px;
@@ -92,3 +109,7 @@ header {
     opacity: 0.9;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
