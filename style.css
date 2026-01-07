@@ -78,6 +78,26 @@ header {
 a {
   -webkit-tap-highlight-color: transparent;
 }
+.site-footer {
+  margin-top: 80px;
+  padding: 60px 20px 40px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+.footer-main {
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  margin: 0 0 8px;
+}
+
+.footer-sub {
+  font-size: 13px;
+  color: #777;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -116,6 +136,13 @@ a {
   .item:active img {
     transform: scale(0.98);
     opacity: 0.9;
+  }
+    .footer-main {
+    font-size: 16px;
+  }
+
+  .footer-sub {
+    font-size: 12px;
   }
 }
 
