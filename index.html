@@ -84,5 +84,21 @@
   <p class="footer-main">Hecho para acompañar sus primeras aventuras</p>
   <p class="footer-sub">Trebyarte · Hecho en Argentina</p>
 </footer>
+  <script>
+  const footer = document.querySelector('footer');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        footer.classList.add('visible');
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(footer);
+</script>
+
 </body>
 </html>
