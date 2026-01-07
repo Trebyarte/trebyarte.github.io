@@ -82,4 +82,13 @@ header {
     column-count: 1;
     padding: 0 20px;
   }
+  
+    .item img {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+
+  .item:active img {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 }
