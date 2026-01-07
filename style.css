@@ -59,6 +59,8 @@ header {
 .item {
   break-inside: avoid;
   margin-bottom: 30px;
+  display: inline-block;   /* CLAVE */
+  width: 100%;
 }
 
 .item img {
