@@ -13,35 +13,6 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
-  
-<script>
-document.querySelectorAll('.img-wrap').forEach(wrap => {
-  const imgs = wrap.querySelectorAll('img');
-  let index = 0;
-  let interval;
-
-  // asegurar que el contenedor tome el alto de la primera imagen
-  const mainImg = imgs[0];
-  mainImg.onload = () => {
-    wrap.style.height = mainImg.offsetHeight + 'px';
-  };
-
-  wrap.closest('.item').addEventListener('mouseenter', () => {
-    interval = setInterval(() => {
-      imgs[index].classList.remove('active');
-      index = (index + 1) % imgs.length;
-      imgs[index].classList.add('active');
-    }, 1400);
-  });
-
-  wrap.closest('.item').addEventListener('mouseleave', () => {
-    clearInterval(interval);
-    imgs.forEach(img => img.classList.remove('active'));
-    index = 0;
-    imgs[0].classList.add('active');
-  });
-});
-</script>
 
 <body>
 
@@ -65,11 +36,7 @@ document.querySelectorAll('.img-wrap').forEach(wrap => {
   
 <main class="gallery">
   <a href="https://articulo.mercadolibre.com.ar/MLA-1111592451-avion-premium-pata-pata-madera-infantil-montessori-juguete-_JM" target="_blank" class="item">
-      <div class="img-wrap">
-    <img src="imagenes/Avionpatapata.jpg" class="img-main active" alt="Juguete de madera con forma de avión">
-    <img src="imagenes/Avionpatapata1.jpg" alt="Juguete de madera con forma de avión">
-    <img src="imagenes/Avionpatapata2.jpg" alt="Juguete de madera con forma de avión">
-  </div>
+    <img src="imagenes/Avionpatapata.jpg" alt="Juguete de madera con forma de avion">
   </a>
 
   <a href="https://articulo.mercadolibre.com.ar/MLA-830475497-caballito-mecedor-madera-pintado-infantil-_JM" target="_blank" class="item">
