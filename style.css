@@ -87,6 +87,12 @@ header {
   transform: translateY(-6px);
   transition: opacity 0.6s ease, transform 0.6s ease;
   pointer-events: none;
+}
+
+  .item:hover .age-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .item img {
   width: 100%;
