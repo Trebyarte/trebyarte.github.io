@@ -26,23 +26,14 @@ header {
 /* ICONOS */
 .header-icons {
   position: absolute;
-  left: 20px;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   gap: 14px;
 }
 
 .header-icons img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
-}
-.header-mail {
-  position: absolute;
-  right: 20px;
-}
-
-.header-mail img {
   width: 20px;
   height: 20px;
   opacity: 0.85;
