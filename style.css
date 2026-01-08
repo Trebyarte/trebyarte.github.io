@@ -142,8 +142,6 @@ footer.visible {
   letter-spacing: 0.5px;
   margin: 0;
 }
-
-
 /* MOBILE */
 @media (max-width: 768px) {
 
@@ -160,11 +158,10 @@ footer.visible {
     width: 18px;
     height: 18px;
   }
-}
 
   .gallery {
-    column-count: 1 !important;
-    column-gap: 0 !important;
+    column-count: 1;
+    column-gap: 0;
     padding: 0 20px;
   }
 
@@ -184,15 +181,12 @@ footer.visible {
     transform: scale(0.98);
     opacity: 0.9;
   }
-    .footer-main {
+
+  .footer-main {
     font-size: 18px;
   }
 
   .footer-sub {
     font-size: 12px;
   }
-}
-
-html {
-  scroll-behavior: smooth;
 }
