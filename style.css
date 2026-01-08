@@ -155,10 +155,12 @@ footer.visible {
     font-size: 26px;
   }
 
-  .header-icons img {
+  .header-left img,
+  .header-right img {
     width: 18px;
     height: 18px;
   }
+}
 
   .gallery {
     column-count: 1 !important;
