@@ -51,8 +51,6 @@ header {
   letter-spacing: 1px;
 }
 .menu-toggle {
-  position: absolute;
-  right: 20px;
   width: 22px;
   height: 16px;
   display: flex;
