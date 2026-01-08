@@ -30,12 +30,14 @@ header {
   top: 50%;
   transform: translateY(-50%);
   display: flex;
+  align-items: center;
   gap: 14px;
 }
 
 .header-icons img {
   width: 20px;
   height: 20px;
+  display: block; 
   opacity: 0.85;
   transition: opacity 0.2s ease;
 }
