@@ -275,8 +275,17 @@ footer.visible {
     height: 18px;
   }
   .menu {
+    top: 0;
+    right: 0;
+    left: 0;
+
     width: 100%;
-    padding: 48px 24px 24px;
+    height: 100vh;
+
+    padding: 56px 24px 24px;
+
+    border-radius: 0;
+    box-shadow: none;
   }
   .gallery {
     column-count: 1;
