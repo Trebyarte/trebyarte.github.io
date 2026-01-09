@@ -317,6 +317,28 @@ footer.visible {
     border-radius: 0;
     box-shadow: none;
   }
+  
+  .menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .menu-toggle span {
+    transition: all 0.3s ease;
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 3000;
+  }
+  
   .gallery {
     column-count: 1;
     column-gap: 0;
