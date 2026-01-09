@@ -69,7 +69,7 @@ header {
   height: 16px;
   display: flex;
   position: relative;
-  top: -1px;
+  top: -2px;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
