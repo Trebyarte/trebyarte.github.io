@@ -91,12 +91,11 @@ header {
 
 .menu {
   position: fixed;
-  top: 0;
+  top: 80;
   right: 0;
   width: 340px;
   height: auto;
   min-height: fit-content;
-  top: 24px;
   right: 24px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.06);
