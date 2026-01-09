@@ -150,6 +150,7 @@ function closeMenu() {
   document.body.style.overflow = "";
   document.querySelector(".menu-overlay").classList.remove("open");
   document.querySelector(".site-content").classList.remove("blur");
+  document.querySelector(".menu-close").addEventListener("click", closeMenu);
 }
 
 
