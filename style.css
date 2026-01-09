@@ -177,8 +177,6 @@ header {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.08);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
 
   opacity: 0;
   pointer-events: none;
@@ -191,6 +189,15 @@ header {
   opacity: 1;
   pointer-events: auto;
 }
+
+.site-content {
+  transition: filter 200ms ease;
+}
+
+.site-content.blur {
+  filter: blur(3px);
+}
+
 
 /* =========================
    HAMBURGUESA → CERRAR
