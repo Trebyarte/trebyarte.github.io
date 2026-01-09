@@ -97,7 +97,6 @@ header {
   padding: 48px 32px 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font-family: "Nova Square", sans-serif;
   transform: translateX(100%);
   opacity: 0;
@@ -136,7 +135,7 @@ header {
 }
 
 .menu-secondary {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .menu-secondary li {
