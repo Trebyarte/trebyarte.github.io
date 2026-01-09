@@ -92,7 +92,12 @@ header {
   top: 0;
   right: 0;
   width: 340px;
-  height: 100vh;
+  height: auto;
+  min-height: fit-content;
+  top: 24px;
+  right: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   background: #ffffff;
   padding: 48px 32px 32px;
   display: flex;
@@ -150,6 +155,14 @@ header {
   text-decoration: none;
   display: inline-block;
   transition: opacity 150ms ease, transform 150ms ease;
+}
+.menu-secondary::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin-bottom: 16px;
 }
 
 .menu-secondary a:hover {
