@@ -141,6 +141,7 @@
     menuToggle.classList.add("open");
     document.body.style.overflow = "hidden";
     document.querySelector(".menu-overlay").classList.add("open");
+    document.querySelector(".site-content").classList.add("blur");
   }
 
   function closeMenu() {
@@ -148,6 +149,7 @@
     menuToggle.classList.remove("open");
     document.body.style.overflow = "";
     document.querySelector(".menu-overlay").classList.remove("open");
+    document.querySelector(".site-content").classList.remove("blur");
   }
 
   menuToggle.addEventListener("click", () => {
