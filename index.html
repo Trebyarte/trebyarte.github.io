@@ -151,7 +151,6 @@ function unlockScroll() {
   function openMenu() {
     menu.classList.add("open");
     menuToggle.classList.add("open");
-    document.body.style.overflow = "hidden";
     lockScroll();
     document.querySelector(".menu-overlay").classList.add("open");
     document.querySelector(".site-content").classList.add("blur");
@@ -160,7 +159,6 @@ function unlockScroll() {
   function closeMenu() {
     menu.classList.remove("open");
     menuToggle.classList.remove("open");
-    document.body.style.overflow = "";
     unlockScroll();
     document.querySelector(".menu-overlay").classList.remove("open");
     document.querySelector(".site-content").classList.remove("blur");
