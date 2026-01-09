@@ -136,10 +136,23 @@
   const menu = document.querySelector(".menu");
   const menuLinks = document.querySelectorAll(".menu a");
 
+  function lockScroll() {
+  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.overflow = "hidden";
+  document.body.style.paddingRight = scrollBarWidth + "px";
+}
+
+function unlockScroll() {
+  document.body.style.overflow = "";
+  document.body.style.paddingRight = "";
+}
+
+  
   function openMenu() {
     menu.classList.add("open");
     menuToggle.classList.add("open");
     document.body.style.overflow = "hidden";
+    lockScroll();
     document.querySelector(".menu-overlay").classList.add("open");
     document.querySelector(".site-content").classList.add("blur");
   }
@@ -148,6 +161,7 @@
     menu.classList.remove("open");
     menuToggle.classList.remove("open");
     document.body.style.overflow = "";
+    unlockScroll();
     document.querySelector(".menu-overlay").classList.remove("open");
     document.querySelector(".site-content").classList.remove("blur");
   }
