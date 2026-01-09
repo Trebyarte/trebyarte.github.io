@@ -58,6 +58,43 @@
     <li><a href="#">¿Por qué existe Trebyarte?</a></li>
   </ul>
 </nav>
+<script>
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+  const menuLinks = document.querySelectorAll(".menu a");
+
+  function openMenu() {
+    menu.classList.add("open");
+    menuToggle.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeMenu() {
+    menu.classList.remove("open");
+    menuToggle.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menu.classList.contains("open");
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  menuLinks.forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  // cerrar al hacer click fuera del menú
+  document.addEventListener("click", (e) => {
+    if (
+      menu.classList.contains("open") &&
+      !menu.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      closeMenu();
+    }
+  });
+</script>
 
   </header>
   
