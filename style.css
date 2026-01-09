@@ -183,7 +183,7 @@ header {
   opacity: 0;
   pointer-events: none;
 
-  transition: opacity 200ms ease;
+  transition: opacity 200ms ease 50ms;
   z-index: 1500;
 }
 
