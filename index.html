@@ -68,12 +68,14 @@
     menu.classList.add("open");
     menuToggle.classList.add("open");
     document.body.style.overflow = "hidden";
+    document.querySelector(".menu-overlay").classList.add("open");
   }
 
   function closeMenu() {
     menu.classList.remove("open");
     menuToggle.classList.remove("open");
     document.body.style.overflow = "";
+    document.querySelector(".menu-overlay").classList.remove("open");
   }
 
   menuToggle.addEventListener("click", () => {
