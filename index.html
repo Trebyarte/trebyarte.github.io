@@ -139,10 +139,10 @@
     <nav class="menu">
       <button class="menu-close" aria-label="Cerrar menú">✕</button>
   <ul class="menu-primary">
-    <li><a href="#">Paneles Sensoriales</a></li>
-    <li><a href="#">Mecedores</a></li>
-    <li><a href="#">Pata pata</a></li>
-    <li><a href="#">Todos</a></li>
+  <li><a href="#" data-filter="paneles">Paneles Sensoriales</a></li>
+  <li><a href="#" data-filter="mecedores">Mecedores</a></li>
+  <li><a href="#" data-filter="patapata">Pata pata</a></li>
+  <li><a href="#" data-filter="all">Todos</a></li>
   </ul>
 
   <ul class="menu-secondary">
@@ -213,6 +213,30 @@ const itemsObserver = new IntersectionObserver(
 );
 
 items.forEach(item => itemsObserver.observe(item));
+  
+// =======================
+// FILTRADO DE PRODUCTOS
+// =======================
+
+const filterLinks = document.querySelectorAll(".menu-primary a[data-filter]");
+
+filterLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const filter = link.dataset.filter;
+
+    items.forEach(item => {
+      const category = item.dataset.category;
+
+      if (filter === "all" || category.includes(filter)) {
+        item.style.display = "";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+});
 
 </script>
 </body>
