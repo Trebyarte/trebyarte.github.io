@@ -139,10 +139,10 @@
     <nav class="menu">
       <button class="menu-close" aria-label="Cerrar menú">✕</button>
   <ul class="menu-primary">
-  <li><a href="#" data-filter="paneles">Paneles Sensoriales</a></li>
-  <li><a href="#" data-filter="mecedores">Mecedores</a></li>
-  <li><a href="#" data-filter="patapata">Pata pata</a></li>
-  <li><a href="#" data-filter="all">Todos</a></li>
+  <li><a href="#paneles" data-filter="paneles">Paneles Sensoriales</a></li>
+  <li><a href="#mecedores" data-filter="mecedores">Mecedores</a></li>
+  <li><a href="#patapata" data-filter="patapata">Pata pata</a></li>
+  <li><a href="#all" data-filter="all">Todos</a></li>
   </ul>
 
   <ul class="menu-secondary">
@@ -217,6 +217,26 @@ items.forEach(item => itemsObserver.observe(item));
 // =======================
 // FILTRADO DE PRODUCTOS
 // =======================
+function applyFilter(filter) {
+  items.forEach(item => {
+    const category = item.dataset.category;
+    item.classList.remove("visible");
+
+    if (filter === "all" || category.includes(filter)) {
+      item.style.display = "";
+      setTimeout(() => {
+        item.classList.add("visible");
+      }, 50);
+    } else {
+      item.style.display = "none";
+    }
+  });
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
 const filterLinks = document.querySelectorAll(".menu-primary a[data-filter]");
 
@@ -225,27 +245,12 @@ filterLinks.forEach(link => {
     e.preventDefault();
 
     const filter = link.dataset.filter;
-
-    items.forEach(item => {
-      const category = item.dataset.category;
-            item.classList.remove("visible");
-
-      if (filter === "all" || category.includes(filter)) {
-        item.style.display = "";
-        setTimeout(() => {
-          item.classList.add("visible");
-        }, 50);
-      } else {
-        item.style.display = "none";
-      }
-    });
-        window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-
+    location.hash = filter;   // 👈 guarda el estado
+    applyFilter(filter);
   });
 });
+const initialFilter = location.hash.replace("#", "") || "all";
+applyFilter(initialFilter);
 
 </script>
 </body>
