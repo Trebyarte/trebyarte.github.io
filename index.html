@@ -228,9 +228,13 @@ filterLinks.forEach(link => {
 
     items.forEach(item => {
       const category = item.dataset.category;
+            item.classList.remove("visible");
 
       if (filter === "all" || category.includes(filter)) {
         item.style.display = "";
+        setTimeout(() => {
+          item.classList.add("visible");
+        }, 50);
       } else {
         item.style.display = "none";
       }
