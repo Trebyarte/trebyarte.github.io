@@ -253,8 +253,8 @@ header {
 
 .item {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  transform: translateY(60px);
+  transition: opacity 800ms ease-out, transform 800ms ease-out;
 }
 
 .item.visible {
