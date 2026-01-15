@@ -247,6 +247,21 @@ header {
   width: 100%;
 }
 
+/* =========================
+   ANIMACIÓN ITEMS
+========================= */
+
+.item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .item img {
   width: 100%;
   height: auto;
