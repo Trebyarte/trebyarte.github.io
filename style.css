@@ -381,6 +381,10 @@ footer.visible {
   }
 
   .item {
+    transform: translateY(60px); /* más desde abajo */
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .item {
     margin-bottom: 30px;
   }
 
