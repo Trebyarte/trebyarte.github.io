@@ -121,17 +121,17 @@
   <script>
   const footer = document.querySelector('footer');
 
-  const observer = new IntersectionObserver(
+  const footerObserver = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
         footer.classList.add('visible');
-        observer.disconnect();
+        footerObserver.disconnect();
       }
     },
     { threshold: 0.2 }
   );
 
-  observer.observe(footer);
+  footerObserver.observe(footer);
 </script>
   </div> 
     
@@ -196,6 +196,24 @@ document.addEventListener("click", (e) => {
       closeMenu();
     }
   });
+  const items = document.querySelectorAll(".item");
+
+const itemsObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        itemsObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.2
+  }
+);
+
+items.forEach(item => itemsObserver.observe(item));
+
 </script>
 </body>
 </html>
