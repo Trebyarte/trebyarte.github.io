@@ -253,13 +253,15 @@ header {
 
 .item {
   opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 800ms ease-out, transform 800ms ease-out;
+  transform: translateY(150px) scale(0.95);
+  transition:
+    opacity 1400ms ease,
+    transform 1400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .item img {
@@ -381,8 +383,16 @@ footer.visible {
   }
 
   .item {
-    transform: translateY(60px); /* más desde abajo */
-    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0;
+    transform: translateY(110px) scale(0.97);
+    transition:
+      opacity 1000ms ease,
+      transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
   .item {
     margin-bottom: 30px;
