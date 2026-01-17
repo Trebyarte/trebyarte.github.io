@@ -220,15 +220,14 @@ items.forEach(item => itemsObserver.observe(item));
 function applyFilter(filter) {
   items.forEach(item => {
     const category = item.dataset.category;
-       item.style.opacity = "";
-       item.style.transform = "";
 
+    // reset visual
+    item.classList.remove("visible");
+    itemsObserver.unobserve(item);
 
     if (filter === "all" || category.includes(filter)) {
       item.style.display = "";
-      setTimeout(() => {
-        item.classList.add("visible");
-      }, 50);
+      itemsObserver.observe(item); // 👈 el observer decide cuándo aparece
     } else {
       item.style.display = "none";
     }
@@ -239,6 +238,7 @@ function applyFilter(filter) {
     behavior: "smooth"
   });
 }
+
 
 const filterLinks = document.querySelectorAll(".menu-primary a[data-filter]");
 
