@@ -265,13 +265,17 @@ function updateCategoryTitle(filter) {
 const gallery = document.querySelector(".gallery");
 
 homeLink.addEventListener("click", () => {
+
+  // 🔴 salir del manifiesto si estaba abierto
   document.body.classList.remove("manifesto-open");
+
+  // 🔴 limpiar el hash (#manifesto, #paneles, etc.)
+  history.pushState("", document.title, window.location.pathname);
 
   gallery.classList.add("is-resetting");
   updateCategoryTitle("all");
 
   setTimeout(() => {
-    history.pushState("", document.title, window.location.pathname);
     applyFilter("all");
     gallery.classList.remove("is-resetting");
 
@@ -281,7 +285,6 @@ homeLink.addEventListener("click", () => {
     });
   }, 250);
 });
-
 
 
 // =======================
