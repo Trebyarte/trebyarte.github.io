@@ -173,7 +173,7 @@
 
   <ul class="menu-secondary">
     <li><a href="#">Preguntas frecuentes</a></li>
-    <li><a href="#manifesto" id="openManifesto">¿Por qué existe Trebyarte?</a></li>
+    <li><a href="#manifesto" id="manifestoLink">¿Por qué existe Trebyarte?</a></li>
   </ul>
 </nav>
 <script>
@@ -262,9 +262,13 @@ function updateCategoryTitle(filter) {
   categoryTitle.style.transform = "translateY(0)";
 }
   
-const gallery = document.querySelector(".gallery");
+  const gallery = document.querySelector(".gallery");
+  const manifesto = document.getElementById("manifesto");
+
 
 homeLink.addEventListener("click", () => {
+  manifesto.classList.remove("active");
+gallery.style.display = "";
 
   // 🔴 salir del manifiesto si estaba abierto
   document.body.classList.remove("manifesto-open");
@@ -346,18 +350,25 @@ if (location.hash === "#manifesto") {
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
-const manifestoLink = document.getElementById("openManifesto");
+const manifestoLink = document.getElementById("manifestoLink");
 
 manifestoLink.addEventListener("click", (e) => {
   e.preventDefault();
 
-  history.pushState(null, "", "#manifesto");
-  document.body.classList.add("manifesto-open");
+  // ocultar galería
+  gallery.style.display = "none";
+  categoryTitle.style.opacity = "0";
 
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  // mostrar manifesto con animación
+  manifesto.classList.add("active");
+
+  // guardar estado en URL
+  history.pushState({ section: "manifesto" }, "", "#manifesto");
+
+  // subir al inicio
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 
   animateManifesto();
 });
