@@ -223,14 +223,16 @@ items.forEach(item => itemsObserver.observe(item));
   
 function updateCategoryTitle(filter) {
   if (!filter || filter === "all") {
-    categoryTitle.style.display = "none";
+    categoryTitle.style.opacity = "0";
+    categoryTitle.style.transform = "translateY(-6px)";
   } else {
-    categoryTitle.style.display = "block";
     categoryTitle.textContent =
       filter.charAt(0).toUpperCase() + filter.slice(1);
+
+    categoryTitle.style.opacity = "1";
+    categoryTitle.style.transform = "translateY(0)";
   }
 }
-
 // =======================
 // FILTRADO DE PRODUCTOS
 // =======================
