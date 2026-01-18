@@ -358,8 +358,10 @@ footer.visible {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #777;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
+  text-align: center;
 }
+
 
 .manifesto p {
   font-family: Arial, Helvetica, sans-serif;
