@@ -243,20 +243,29 @@ function updateCategoryTitle(filter) {
   categoryTitle.style.transform = "translateY(0)";
 }
   
-  homeLink.addEventListener("click", () => {
-  // borrar hash sin recargar
-  history.pushState("", document.title, window.location.pathname);
+const gallery = document.querySelector(".gallery");
 
-  // volver a mostrar todo
-  applyFilter("all");
+homeLink.addEventListener("click", () => {
+  // fade out
+  gallery.classList.add("is-resetting");
+
+  // ocultar título
   updateCategoryTitle("all");
 
-  // scroll al inicio
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  setTimeout(() => {
+    history.pushState("", document.title, window.location.pathname);
+    applyFilter("all");
+
+    // volver a mostrar
+    gallery.classList.remove("is-resetting");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, 250);
 });
+
 
 
 // =======================
