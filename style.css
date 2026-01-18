@@ -344,10 +344,27 @@ footer.visible {
 .manifesto {
   display: none;
   min-height: calc(100vh - 64px);
-  padding: 72px 20px 80px;
+  position: relative;
+  background-color: #f7f5f2;
+  overflow: hidden;
+  padding: 6rem 1rem;
+}
+.manifesto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/imagenes/aboutus.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  filter: blur(2px);
+  z-index: 0;
 }
 
+
 .manifesto-inner {
+  position: relative;
+  z-index: 1;
   max-width: 680px;
   margin: 0 auto;
 }
