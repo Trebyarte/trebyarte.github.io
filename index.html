@@ -316,12 +316,16 @@ filterLinks.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // cerrar manifiesto si estaba abierto
+    document.body.classList.remove("manifesto-open");
+
     const filter = link.dataset.filter;
-    location.hash = filter;   // 👈 guarda el estado
+    location.hash = filter;
     applyFilter(filter);
     updateCategoryTitle(filter);
   });
 });
+
 const initialFilter = location.hash.replace("#", "") || "all";
 applyFilter(initialFilter);
 updateCategoryTitle(initialFilter);
