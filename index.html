@@ -336,14 +336,25 @@ applyFilter(initialFilter);
 updateCategoryTitle(initialFilter);
   
 if (location.hash === "#manifesto") {
+  // estado manifesto activo
   document.body.classList.add("manifesto-open");
 
+  // ocultar galería y título
+  gallery.style.display = "none";
+  categoryTitle.style.opacity = "0";
+
+  // mostrar manifesto
+  manifesto.classList.add("active");
+
+  // subir al inicio
   window.scrollTo(0, 0);
 
+  // animar párrafos
   setTimeout(() => {
     animateManifesto();
-  }, 100);
+  }, 200);
 }
+
 
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
