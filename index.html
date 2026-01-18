@@ -55,6 +55,8 @@
   </header>
 
   <div class="site-content">
+
+    <h2 id="categoryTitle" class="category-title">Todos los productos</h2>
   
 <main class="gallery">
   <a href="https://articulo.mercadolibre.com.ar/MLA-1111592451-avion-premium-pata-pata-madera-infantil-montessori-juguete-_JM" target="_blank" class="item" data-category="patapata">
@@ -201,6 +203,7 @@ document.addEventListener("click", (e) => {
     }
   });
   const items = document.querySelectorAll(".item");
+  const categoryTitle = document.getElementById("categoryTitle");
 
 const itemsObserver = new IntersectionObserver(
   entries => {
@@ -218,6 +221,15 @@ const itemsObserver = new IntersectionObserver(
 
 items.forEach(item => itemsObserver.observe(item));
   
+  function updateCategoryTitle(filter) {
+  if (!filter || filter === "all") {
+    categoryTitle.textContent = "Todos los productos";
+  } else {
+    categoryTitle.textContent =
+      filter.charAt(0).toUpperCase() + filter.slice(1);
+  }
+}
+
 // =======================
 // FILTRADO DE PRODUCTOS
 // =======================
@@ -253,10 +265,13 @@ filterLinks.forEach(link => {
     const filter = link.dataset.filter;
     location.hash = filter;   // 👈 guarda el estado
     applyFilter(filter);
+    updateCategoryTitle(filter);
   });
 });
 const initialFilter = location.hash.replace("#", "") || "all";
 applyFilter(initialFilter);
+updateCategoryTitle(initialFilter);
+
   
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
