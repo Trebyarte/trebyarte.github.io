@@ -356,7 +356,7 @@ footer.visible {
   background-image: url("/imagenes/Avionpatapata2.jpg");
   background-size: cover;
   background-position: center;
-  opacity: 0.16;
+  opacity: 0.12;
   filter: blur(2px);
   z-index: 0;
 }
