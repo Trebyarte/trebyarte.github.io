@@ -337,6 +337,48 @@ footer.visible {
   letter-spacing: 0.5px;
   margin: 0;
 }
+/* =========================
+   MANIFIESTO – OPCIÓN A
+========================= */
+
+.manifesto {
+  display: none;
+  min-height: calc(100vh - 64px);
+  padding: 120px 20px 80px;
+}
+
+.manifesto-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.manifesto h1 {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 48px;
+}
+
+.manifesto p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+  color: #111;
+}
+
+/* estado activo */
+body.manifesto-open .manifesto {
+  display: block;
+}
+
+body.manifesto-open .gallery,
+body.manifesto-open .category-title {
+  display: none;
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
   
