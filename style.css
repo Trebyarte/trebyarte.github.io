@@ -353,7 +353,7 @@ footer.visible {
   min-height: calc(100vh - 64px);
   padding: 6rem 1rem;
   position: relative;
-  background-color: #f7f5f2;
+  background-color: #f2f2f2;
   overflow: hidden;
 }
 .manifesto.active {
