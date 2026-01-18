@@ -173,7 +173,7 @@
 
   <ul class="menu-secondary">
     <li><a href="#">Preguntas frecuentes</a></li>
-    <li><a href="#">¿Por qué existe Trebyarte?</a></li>
+    <li><a href="#manifesto" id="openManifesto">¿Por qué existe Trebyarte?</a></li>
   </ul>
 </nav>
 <script>
@@ -265,17 +265,14 @@ function updateCategoryTitle(filter) {
 const gallery = document.querySelector(".gallery");
 
 homeLink.addEventListener("click", () => {
-  // fade out
-  gallery.classList.add("is-resetting");
+  document.body.classList.remove("manifesto-open");
 
-  // ocultar título
+  gallery.classList.add("is-resetting");
   updateCategoryTitle("all");
 
   setTimeout(() => {
     history.pushState("", document.title, window.location.pathname);
     applyFilter("all");
-
-    // volver a mostrar
     gallery.classList.remove("is-resetting");
 
     window.scrollTo({
@@ -332,6 +329,18 @@ updateCategoryTitle(initialFilter);
   
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
+});
+const manifestoLink = document.getElementById("openManifesto");
+
+manifestoLink.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  document.body.classList.add("manifesto-open");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
 
 </script>
