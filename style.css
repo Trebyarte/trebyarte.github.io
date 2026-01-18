@@ -267,6 +267,13 @@ header {
   display: inline-block;
   width: 100%;
 }
+.gallery {
+  transition: opacity 0.25s ease;
+}
+
+.gallery.is-resetting {
+  opacity: 0;
+}
 
 /* =========================
    ANIMACIÓN ITEMS
