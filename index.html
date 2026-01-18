@@ -119,6 +119,10 @@
   <p class="footer-sub">Trebyarte · Hecho en Argentina</p>
 </footer>
   <script>
+    if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
   const footer = document.querySelector('footer');
 
   const footerObserver = new IntersectionObserver(
@@ -253,6 +257,10 @@ filterLinks.forEach(link => {
 });
 const initialFilter = location.hash.replace("#", "") || "all";
 applyFilter(initialFilter);
+  
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
 
 </script>
 </body>
