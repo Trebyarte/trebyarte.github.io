@@ -362,15 +362,14 @@ manifestoLink.addEventListener("click", (e) => {
   // mostrar manifesto con animación
   manifesto.classList.add("active");
 
+  // 👉 animar párrafos
+  animateManifesto();
+
   // guardar estado en URL
   history.pushState({ section: "manifesto" }, "", "#manifesto");
 
   // subir al inicio
   window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-
-  animateManifesto();
 });
 
 
