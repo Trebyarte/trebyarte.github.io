@@ -266,12 +266,10 @@ function updateCategoryTitle(filter) {
   const manifesto = document.getElementById("manifesto");
 
 
-homeLink.addEventListener("click", () => {
-  manifesto.classList.remove("active");
-gallery.style.display = "";
+    homeLink.addEventListener("click", () => {
+    manifesto.classList.remove("active");
+    gallery.style.display = "";
 
-  // 🔴 salir del manifiesto si estaba abierto
-  document.body.classList.remove("manifesto-open");
 
   // 🔴 limpiar el hash (#manifesto, #paneles, etc.)
   history.pushState("", document.title, window.location.pathname);
@@ -323,8 +321,8 @@ filterLinks.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    // cerrar manifiesto si estaba abierto
-    document.body.classList.remove("manifesto-open");
+    manifesto.classList.remove("active");
+    gallery.style.display = "";
 
     const filter = link.dataset.filter;
     location.hash = filter;
