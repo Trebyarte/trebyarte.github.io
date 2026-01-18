@@ -204,7 +204,13 @@ document.addEventListener("click", (e) => {
   });
   const items = document.querySelectorAll(".item");
   const categoryTitle = document.getElementById("categoryTitle");
-
+const categoryNames = {
+  paneles: "Paneles Sensoriales",
+  mecedores: "Mecedores",
+  patapata: "Pata pata",
+  personalizados: "Personalizados",
+  otros: "Otros"
+};
 const itemsObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -225,14 +231,16 @@ function updateCategoryTitle(filter) {
   if (!filter || filter === "all") {
     categoryTitle.style.opacity = "0";
     categoryTitle.style.transform = "translateY(-6px)";
-  } else {
-    categoryTitle.textContent =
-      filter.charAt(0).toUpperCase() + filter.slice(1);
-
-    categoryTitle.style.opacity = "1";
-    categoryTitle.style.transform = "translateY(0)";
+    return;
   }
+
+  const title = categoryNames[filter] || filter;
+
+  categoryTitle.textContent = title;
+  categoryTitle.style.opacity = "1";
+  categoryTitle.style.transform = "translateY(0)";
 }
+
 // =======================
 // FILTRADO DE PRODUCTOS
 // =======================
