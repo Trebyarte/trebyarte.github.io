@@ -238,13 +238,14 @@ header {
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
-  margin: 24px 0 16px;
-  opacity: 0.8;
+  margin: 0 0 16px;
+  opacity: 0;
 
-  display: none; /* 👈 oculto por defecto */
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  pointer-events: none;
 }
-
-
 
 /* GALERÍA */
 .gallery {
