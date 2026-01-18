@@ -1,8 +1,4 @@
-* 
-:root {
-  --font-secondary: 'Nova Square', sans-serif;
-}
-{
+* {
   box-sizing: border-box;
 }
 html {
@@ -257,58 +253,6 @@ header {
 }
 
 /* GALERÍA */
-.why-trebyarte {
-  width: 100%;
-}
-
-.why-block {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 80px 24px;
-}
-
-.why-block p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #333;
-  margin-bottom: 1.2em;
-}
-.why-intro h2 {
-  font-family: var(--font-secondary);
-  font-size: 2rem;
-  margin-bottom: 32px;
-}
-
-.why-intro {
-  background: #fff;
-}
-.why-core {
-  background: #f2f0ec; /* beige/gris cálido */
-  text-align: center;
-}
-
-.why-core p {
-  font-size: 1.25rem;
-  font-family: var(--font-secondary);
-  line-height: 1.8;
-  color: #111;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.why-outro {
-  background: #fff;
-}
-.why-block {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.why-block.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .gallery {
   margin-top: 40px;
   column-count: 2;
