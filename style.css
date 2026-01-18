@@ -1,4 +1,8 @@
-* {
+* 
+:root {
+  --font-secondary: 'Nova Square', sans-serif;
+}
+{
   box-sizing: border-box;
 }
 html {
