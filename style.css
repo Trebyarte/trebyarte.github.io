@@ -309,7 +309,7 @@ a {
 footer {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 2.2s ease, transform 2.2s ease;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 footer.visible {
   opacity: 1;
