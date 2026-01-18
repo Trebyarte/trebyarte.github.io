@@ -329,8 +329,17 @@ filterLinks.forEach(link => {
 const initialFilter = location.hash.replace("#", "") || "all";
 applyFilter(initialFilter);
 updateCategoryTitle(initialFilter);
-
   
+if (location.hash === "#manifesto") {
+  document.body.classList.add("manifesto-open");
+
+  window.scrollTo(0, 0);
+
+  setTimeout(() => {
+    animateManifesto();
+  }, 100);
+}
+
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
 });
