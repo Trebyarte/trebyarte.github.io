@@ -205,6 +205,7 @@ document.addEventListener("click", (e) => {
   });
   const items = document.querySelectorAll(".item");
   const categoryTitle = document.getElementById("categoryTitle");
+  const homeLink = document.getElementById("homeLink");
 const categoryNames = {
   paneles: "Paneles Sensoriales",
   mecedores: "Mecedores",
@@ -241,6 +242,22 @@ function updateCategoryTitle(filter) {
   categoryTitle.style.opacity = "1";
   categoryTitle.style.transform = "translateY(0)";
 }
+  
+  homeLink.addEventListener("click", () => {
+  // borrar hash sin recargar
+  history.pushState("", document.title, window.location.pathname);
+
+  // volver a mostrar todo
+  applyFilter("all");
+  updateCategoryTitle("all");
+
+  // scroll al inicio
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
 
 // =======================
 // FILTRADO DE PRODUCTOS
