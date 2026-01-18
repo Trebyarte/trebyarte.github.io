@@ -385,8 +385,8 @@ body.manifesto-open .category-title {
   opacity: 0;
   transform: translateY(12px);
   transition:
-    opacity 800ms ease,
-    transform 800ms ease;
+    opacity 1800ms ease,
+    transform 1800ms ease;
 }
 
 .manifesto p.visible {
