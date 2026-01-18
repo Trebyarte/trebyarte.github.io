@@ -342,6 +342,17 @@ manifestoLink.addEventListener("click", (e) => {
     behavior: "smooth"
   });
 });
+function animateManifesto() {
+  const paragraphs = document.querySelectorAll(".manifesto p");
+
+  paragraphs.forEach((p, index) => {
+    p.classList.remove("visible");
+
+    setTimeout(() => {
+      p.classList.add("visible");
+    }, index * 350);
+  });
+}
 
 </script>
 </body>
