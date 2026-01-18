@@ -235,12 +235,15 @@ header {
 .category-title {
   font-family: 'Nova Square', sans-serif;
   font-size: 16px;
-  opacity: 0.8;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
   margin: 24px 0 16px;
+  opacity: 0.8;
+
+  display: none; /* 👈 oculto por defecto */
 }
+
 
 
 /* GALERÍA */
