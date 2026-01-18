@@ -339,6 +339,7 @@ const manifestoLink = document.getElementById("openManifesto");
 manifestoLink.addEventListener("click", (e) => {
   e.preventDefault();
 
+  history.pushState(null, "", "#manifesto");
   document.body.classList.add("manifesto-open");
 
   window.scrollTo({
@@ -348,6 +349,7 @@ manifestoLink.addEventListener("click", (e) => {
 
   animateManifesto();
 });
+
 
 function animateManifesto() {
   const paragraphs = document.querySelectorAll(".manifesto p");
