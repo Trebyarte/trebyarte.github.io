@@ -221,10 +221,11 @@ const itemsObserver = new IntersectionObserver(
 
 items.forEach(item => itemsObserver.observe(item));
   
-  function updateCategoryTitle(filter) {
+function updateCategoryTitle(filter) {
   if (!filter || filter === "all") {
-    categoryTitle.textContent = "Todos los productos";
+    categoryTitle.style.display = "none";
   } else {
+    categoryTitle.style.display = "block";
     categoryTitle.textContent =
       filter.charAt(0).toUpperCase() + filter.slice(1);
   }
