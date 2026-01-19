@@ -583,6 +583,7 @@ body.faq-open .faq {
 
 .has-variants:hover .product-image img {
   animation: none;
+  transition: none;
 }
 
 .has-variants:hover .product-image img:nth-child(1) {
