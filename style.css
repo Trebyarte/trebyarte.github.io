@@ -342,10 +342,6 @@ footer.visible {
 ========================= */
 
 .faq {
-  opacity: 0;
-  transform: translateY(24px);
-  pointer-events: none;
-
   transition:
     opacity 600ms ease,
     transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -355,12 +351,6 @@ footer.visible {
   position: relative;
   background-color: #f2f2f2;
   overflow: hidden;
-}
-
-.faq.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
 .faq-inner {
@@ -409,8 +399,6 @@ footer.visible {
 ========================= */
 
 .manifesto {
-  display: none;
-  opacity: 0;
   transform: translateY(24px);
   pointer-events: none;
   transition:
@@ -424,8 +412,6 @@ footer.visible {
   overflow: hidden;
 }
 .manifesto.active {
-  display: block;
-  opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
 }
@@ -480,6 +466,32 @@ footer.visible {
 .manifesto p.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.manifesto,
+.faq {
+  display: none;
+  min-height: calc(100vh - 64px);
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* MANIFESTO */
+body.manifesto-open .manifesto {
+  display: block;
+}
+
+/* FAQ */
+body.faq-open .faq {
+  display: block;
+}
+
+/* ocultar galería y título cuando hay sección */
+body.manifesto-open .gallery,
+body.manifesto-open .category-title,
+body.faq-open .gallery,
+body.faq-open .category-title {
+  display: none;
 }
 
 
