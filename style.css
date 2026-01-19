@@ -557,6 +557,7 @@ body.faq-open .faq {
 .has-variants .product-image {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .has-variants .product-image img {
