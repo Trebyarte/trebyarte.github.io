@@ -298,6 +298,28 @@ header {
   display: block;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
+/* =========================
+   PRODUCTOS CON VARIANTES
+========================= */
+
+.item.has-variants .product-image {
+  position: relative;
+  width: 100%;
+}
+
+.item.has-variants .product-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* solo la primera imagen visible */
+.item.has-variants .product-image img:not(:first-child) {
+  opacity: 0;
+}
 
 .item:hover img {
   transform: scale(1.01);
