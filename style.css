@@ -482,7 +482,6 @@ footer.visible {
 .faq {
   display: none;
   min-height: calc(100vh - 64px);
-  padding: 6rem 1rem;
   position: relative;
   overflow: hidden;
 }
