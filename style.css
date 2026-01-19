@@ -418,6 +418,7 @@ footer.visible {
 
   min-height: calc(100vh - 64px);
   position: relative;
+  padding: 6rem 1rem;
   background-color: #f2f2f2;
   overflow: hidden;
 }
