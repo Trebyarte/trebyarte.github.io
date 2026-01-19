@@ -301,6 +301,26 @@ header {
 /* =========================
    PRODUCTOS CON VARIANTES
 ========================= */
+.item.has-variants {
+  transition: transform 0.35s ease;
+}
+
+.item.has-variants:hover {
+  transform: scale(1.01);
+}
+.item.has-variants::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.08);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.item.has-variants:hover::after {
+  opacity: 1;
+}
 
 .item.has-variants .product-image {
   position: relative;
