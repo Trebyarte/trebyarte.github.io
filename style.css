@@ -550,6 +550,30 @@ body.faq-open .faq {
   margin-top: -64px;
 }
 
+/* =========================
+   VARIANTES – BASE
+========================= */
+
+.has-variants .product-image {
+  position: relative;
+  width: 100%;
+}
+
+.has-variants .product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* stack de imágenes */
+.has-variants .product-image img:not(:first-child) {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+
 
 /* MOBILE */
 @media (max-width: 768px) {
