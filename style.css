@@ -507,6 +507,10 @@ body.faq-open .gallery,
 body.faq-open .category-title {
   display: none;
 }
+body.manifesto-open .manifesto,
+body.faq-open .faq {
+  margin-top: -64px;
+}
 
 
 /* MOBILE */
