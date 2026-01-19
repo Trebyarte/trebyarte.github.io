@@ -307,14 +307,30 @@ header {
   width: 100%;
 }
 
-.item.has-variants .product-image img {
+.item.has-variants .product-image {
+  position: relative;
+  width: 100%;
+}
+
+/* imagen base: define altura */
+.item.has-variants .product-image img:first-child {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* variantes superpuestas */
+.item.has-variants .product-image img:not(:first-child) {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  opacity: 0;
 }
+
 
 /* solo la primera imagen visible */
 .item.has-variants .product-image img:not(:first-child) {
