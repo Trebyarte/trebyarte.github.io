@@ -597,22 +597,23 @@ body.faq-open .faq {
   animation: fadeThird 6s infinite;
 }
 @keyframes fadeMain {
-  0%, 20% { opacity: 1; }
-  30%, 80% { opacity: 0; }
+  0%, 25% { opacity: 1; }
+  35%, 75% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @keyframes fadeSecond {
-  0%, 25% { opacity: 0; }
-  35%, 55% { opacity: 1; }
-  65%, 100% { opacity: 0; }
+  0%, 30% { opacity: 0; }
+  40%, 60% { opacity: 1; }
+  70%, 100% { opacity: 0; }
 }
 
 @keyframes fadeThird {
-  0%, 45% { opacity: 0; }
-  55%, 75% { opacity: 1; }
-  85%, 100% { opacity: 0; }
+  0%, 55% { opacity: 0; }
+  65%, 85% { opacity: 1; }
+  95%, 100% { opacity: 0; }
 }
+
 
 
 
