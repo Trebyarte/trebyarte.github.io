@@ -349,7 +349,7 @@ footer.visible {
   min-height: calc(100vh - 64px);
   padding: 6rem 1rem;
   position: relative;
-  background-color: #f2f2f2;
+  background-color: #f7f5f2;
   overflow: hidden;
 }
 
@@ -392,6 +392,17 @@ footer.visible {
 .faq-item p.visible {
   opacity: 1;
   transform: translateY(0);
+}
+.faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("imagenes/Fondofaq.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  filter: blur(2px);
+  z-index: 0;
 }
 
 /* =========================
