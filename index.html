@@ -162,6 +162,10 @@
   <p class="footer-main">Hecho para acompañar sus primeras aventuras</p>
   <p class="footer-sub">Trebyarte · Hecho en Argentina</p>
 </footer>
+
+
+
+    
   <script>
     if ('scrollRestoration' in history) {
   history.scrollRestoration = 'manual';
@@ -288,26 +292,15 @@ function updateCategoryTitle(filter) {
   const manifesto = document.getElementById("manifesto");
 
 
-    homeLink.addEventListener("click", () => {
-    manifesto.classList.remove("active");
-    gallery.style.display = "";
+homeLink.addEventListener("click", () => {
+  document.body.classList.remove("manifesto-open", "faq-open");
 
-
-  // 🔴 limpiar el hash (#manifesto, #paneles, etc.)
   history.pushState("", document.title, window.location.pathname);
 
-  gallery.classList.add("is-resetting");
   updateCategoryTitle("all");
+  applyFilter("all");
 
-  setTimeout(() => {
-    applyFilter("all");
-    gallery.classList.remove("is-resetting");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }, 250);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 
@@ -342,9 +335,8 @@ const filterLinks = document.querySelectorAll(".menu-primary a[data-filter]");
 filterLinks.forEach(link => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-
-    manifesto.classList.remove("active");
-    gallery.style.display = "";
+    
+    document.body.classList.remove("manifesto-open", "faq-open");
 
     const filter = link.dataset.filter;
     location.hash = filter;
@@ -357,39 +349,6 @@ const initialFilter = location.hash.replace("#", "") || "all";
 applyFilter(initialFilter);
 updateCategoryTitle(initialFilter);
   
-if (location.hash === "#manifesto") {
-  // estado manifesto activo
-  document.body.classList.add("manifesto-open");
-
-  // ocultar galería y título
-  gallery.style.display = "none";
-  categoryTitle.style.opacity = "0";
-
-  // mostrar manifesto
-  manifesto.classList.add("active");
-
-  // subir al inicio
-  window.scrollTo(0, 0);
-
-  // animar párrafos
-  setTimeout(() => {
-    animateManifesto();
-  }, 200);
-}
-if (location.hash === "#faq") {
-  gallery.style.display = "none";
-  categoryTitle.style.opacity = "0";
-  manifesto.classList.remove("active");
-
-  faq.classList.add("active");
-
-  window.scrollTo(0, 0);
-
-  setTimeout(() => {
-    animateFaq();
-  }, 200);
-}
-
 
 window.addEventListener("load", () => {
   window.scrollTo(0, 0);
@@ -399,22 +358,15 @@ const manifestoLink = document.getElementById("manifestoLink");
 manifestoLink.addEventListener("click", (e) => {
   e.preventDefault();
 
-  // ocultar galería
-  gallery.style.display = "none";
-  categoryTitle.style.opacity = "0";
+  document.body.classList.remove("faq-open");
+  document.body.classList.add("manifesto-open");
 
-  // mostrar manifesto con animación
-  manifesto.classList.add("active");
+  history.pushState("", "", "#manifesto");
 
-  // 👉 animar párrafos
+  window.scrollTo(0, 0);
   animateManifesto();
-
-  // guardar estado en URL
-  history.pushState({ section: "manifesto" }, "", "#manifesto");
-
-  // subir al inicio
-  window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
   
 const faq = document.getElementById("faq");
 const faqLink = document.getElementById("faqLink");
@@ -422,21 +374,15 @@ const faqLink = document.getElementById("faqLink");
 faqLink.addEventListener("click", (e) => {
   e.preventDefault();
 
-  // ocultar galería y manifesto
-  gallery.style.display = "none";
-  manifesto.classList.remove("active");
-  categoryTitle.style.opacity = "0";
+  document.body.classList.remove("manifesto-open");
+  document.body.classList.add("faq-open");
 
-  // mostrar faq
-  faq.classList.add("active");
+  history.pushState("", "", "#faq");
 
-  // estado
-  history.pushState({ section: "faq" }, "", "#faq");
-
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
+  window.scrollTo(0, 0);
   animateFaq();
 });
+
 
 function animateFaq() {
   const items = document.querySelectorAll(".faq-item p");
@@ -461,6 +407,18 @@ function animateManifesto() {
     }, index * 800);
   });
 }
+  window.addEventListener("load", () => {
+  if (location.hash === "#manifesto") {
+    document.body.classList.add("manifesto-open");
+    animateManifesto();
+  }
+
+  if (location.hash === "#faq") {
+    document.body.classList.add("faq-open");
+    animateFaq();
+  }
+});
+
 
 </script>
 </body>
