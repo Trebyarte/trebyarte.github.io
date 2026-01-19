@@ -572,6 +572,12 @@ body.faq-open .faq {
   opacity: 0;
   transition: opacity 1.4s ease;
 }
+/* hover – mostrar segunda imagen */
+.has-variants:hover .product-image img:nth-child(2) {
+  opacity: 1;
+}
+
+
 
 
 
