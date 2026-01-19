@@ -403,6 +403,17 @@ manifestoLink.addEventListener("click", (e) => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+function animateFaq() {
+  const items = document.querySelectorAll(".faq-item p");
+
+  items.forEach((p, index) => {
+    p.classList.remove("visible");
+
+    setTimeout(() => {
+      p.classList.add("visible");
+    }, index * 600);
+  });
+}
 
 function animateManifesto() {
   const paragraphs = document.querySelectorAll(".manifesto p");
