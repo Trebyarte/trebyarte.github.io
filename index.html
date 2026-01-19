@@ -376,6 +376,19 @@ if (location.hash === "#manifesto") {
     animateManifesto();
   }, 200);
 }
+if (location.hash === "#faq") {
+  gallery.style.display = "none";
+  categoryTitle.style.opacity = "0";
+  manifesto.classList.remove("active");
+
+  faq.classList.add("active");
+
+  window.scrollTo(0, 0);
+
+  setTimeout(() => {
+    animateFaq();
+  }, 200);
+}
 
 
 window.addEventListener("load", () => {
@@ -401,6 +414,28 @@ manifestoLink.addEventListener("click", (e) => {
 
   // subir al inicio
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+  
+const faq = document.getElementById("faq");
+const faqLink = document.getElementById("faqLink");
+
+faqLink.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  // ocultar galería y manifesto
+  gallery.style.display = "none";
+  manifesto.classList.remove("active");
+  categoryTitle.style.opacity = "0";
+
+  // mostrar faq
+  faq.classList.add("active");
+
+  // estado
+  history.pushState({ section: "faq" }, "", "#faq");
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  animateFaq();
 });
 
 function animateFaq() {
