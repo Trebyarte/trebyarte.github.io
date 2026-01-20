@@ -668,6 +668,12 @@ body.faq-open .faq {
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+/* Indicador activo */
+.variant-indicators span.active {
+  transform: scale(1.5);
+  background-color: #fff; /* más visible */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
 
 /* Hover – efecto de resalte */
 .item.has-variants:hover .variant-indicators span {
