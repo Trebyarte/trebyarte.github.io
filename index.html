@@ -334,6 +334,31 @@ document.querySelectorAll(".item.has-variants").forEach(item => {
   // Ajustar clase según cantidad de variantes (para CSS si hace falta)
   indicatorsContainer.className = `variant-indicators has-${imgs.length}-variants`;
 });
+  // === INDICADORES ACTIVOS SEGÚN VARIANTE ACTUAL ===
+document.querySelectorAll(".item.has-variants").forEach(item => {
+  const imgs = item.querySelectorAll(".product-image img");
+  const indicators = item.querySelectorAll(".variant-indicators span");
+
+  // Mostrar la primera variante por defecto
+  indicators[0]?.classList.add("active");
+
+  // Cambiar imagen al hover y activar indicador correspondiente
+  imgs.forEach((img, index) => {
+    img.addEventListener("mouseenter", () => {
+      // Resetear todos los indicadores
+      indicators.forEach(span => span.classList.remove("active"));
+      // Activar el correspondiente
+      indicators[index]?.classList.add("active");
+    });
+  });
+
+  // Si el mouse sale del item, volver al primer indicador
+  item.addEventListener("mouseleave", () => {
+    indicators.forEach(span => span.classList.remove("active"));
+    indicators[0]?.classList.add("active");
+  });
+});
+
 
   const categoryTitle = document.getElementById("categoryTitle");
   const homeLink = document.getElementById("homeLink");
