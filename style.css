@@ -645,25 +645,37 @@ body.faq-open .faq {
   100% { opacity: 0; }
 }
 
-/* =========================
-   INDICADORES MODERNOS DE VARIANTES
-========================= */
 
-.item.has-variants .product-image::after,
-.item.has-variants .product-image::before {
-  content: "";
+
+
+/* INDICADORES DINÁMICOS */
+.variant-indicators {
   position: absolute;
   top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.variant-indicators span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.7); /* blanco semi-transparente */
-  border: 1px solid rgba(0,0,0,0.4); /* borde para contraste */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* leve sombra */
-  z-index: 2;
-  pointer-events: none;
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Hover – efecto de resalte */
+.item.has-variants:hover .variant-indicators span {
+  transform: scale(1.4);
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
 
 /* Hover efecto de resaltado */
 .item.has-variants:hover .product-image::after,
