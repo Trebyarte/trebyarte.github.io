@@ -594,56 +594,6 @@ body.faq-open .faq {
   opacity: 0;
   transition: opacity 1.4s ease;
 }
-/* hover – mostrar segunda imagen */
-.has-variants:hover .product-image img:nth-child(2) {
-  opacity: 1;
-}
-/* =========================
-   VARIANTES – LOOP DESKTOP
-========================= */
-
-.has-variants:hover .product-image img {
-  animation: none;
-  transition: none;
-}
-
-.has-variants:hover .product-image img:nth-child(1) {
-  animation: fadeMain 6s infinite;
-}
-
-.has-variants:hover .product-image img:nth-child(2) {
-  animation: fadeSecond 6s infinite;
-}
-
-.has-variants:hover .product-image img:nth-child(3) {
-  animation: fadeThird 6s infinite;
-}
-@keyframes fadeMain {
-  0%   { opacity: 1; }
-  33%  { opacity: 1; }
-  45%  { opacity: 0; }
-  85%  { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-
-@keyframes fadeSecond {
-  0%   { opacity: 0; }
-  30%  { opacity: 0; }
-  45%  { opacity: 1; }
-  65%  { opacity: 1; }
-  80%  { opacity: 0; }
-  100% { opacity: 0; }
-}
-
-
-@keyframes fadeThird {
-  0%   { opacity: 0; }
-  55%  { opacity: 0; }
-  65%  { opacity: 1; }
-  85%  { opacity: 1; }
-  100% { opacity: 0; }
-}
 
 
 
