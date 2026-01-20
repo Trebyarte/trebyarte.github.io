@@ -575,13 +575,18 @@ function initVariantLoops() {
 
     // === DESKTOP ===
     if (window.innerWidth > 768) {
-      item.addEventListener("mouseenter", () => {
-        if (interval) return;
-        interval = setInterval(() => {
-          current = (current + 1) % imgs.length;
-          showVariant(current);
-        }, 1200);
-      });
+item.addEventListener("mouseenter", () => {
+  if (interval) return;
+
+  // 🔒 sincronizar estado antes de arrancar
+  showVariant(current);
+
+  interval = setInterval(() => {
+    current = (current + 1) % imgs.length;
+    showVariant(current);
+  }, 1200);
+});
+
 
       item.addEventListener("mouseleave", () => {
         clearInterval(interval);
