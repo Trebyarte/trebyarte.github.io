@@ -645,71 +645,70 @@ body.faq-open .faq {
   100% { opacity: 0; }
 }
 
-/* INDICADORES DE VARIANTES ELEGANTES */
-.item.has-variants.has-2-variants .product-image::after,
-.item.has-variants.has-3-variants .product-image::after {
+/* =========================
+   INDICADORES MODERNOS DE VARIANTES
+========================= */
+
+.item.has-variants .product-image::after,
+.item.has-variants .product-image::before {
   content: "";
   position: absolute;
   top: 8px;
-  right: 8px;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: #f0e5d8; /* beige elegante */
-  border: 1px solid rgba(0,0,0,0.25); /* borde que marque sobre cualquier fondo */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* pequeña sombra */
+  background-color: rgba(255, 255, 255, 0.7); /* blanco semi-transparente */
+  border: 1px solid rgba(0,0,0,0.4); /* borde para contraste */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* leve sombra */
   z-index: 2;
   pointer-events: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Si tiene 3 variantes, duplicamos círculos */
-.item.has-variants.has-3-variants .product-image::before,
-.item.has-variants.has-3-variants .product-image::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #f0e5d8;
-  border: 1px solid rgba(0,0,0,0.25);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
-  z-index: 2;
-  pointer-events: none;
+/* Hover efecto de resaltado */
+.item.has-variants:hover .product-image::after,
+.item.has-variants:hover .product-image::before {
+  transform: scale(1.4);
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 
-/* Posicionamiento para 2 o 3 círculos */
+/* Dos variantes */
 .item.has-variants.has-2-variants .product-image::after {
   right: 8px;
 }
-
 .item.has-variants.has-2-variants .product-image::before {
   right: 24px;
 }
 
+/* Tres variantes */
 .item.has-variants.has-3-variants .product-image::after {
   right: 8px;
 }
-
 .item.has-variants.has-3-variants .product-image::before {
   right: 24px;
 }
-
 .item.has-variants.has-3-variants .product-image .indicator-third {
   content: "";
   position: absolute;
   top: 8px;
   right: 40px;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: #f0e5d8;
-  border: 1px solid rgba(0,0,0,0.25);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 2;
   pointer-events: none;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+.item.has-variants.has-3-variants:hover .product-image .indicator-third {
+  transform: scale(1.4);
+  background-color: rgba(255,255,255,1);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
 
 
 
