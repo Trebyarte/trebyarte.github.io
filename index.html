@@ -487,6 +487,40 @@ function animateManifesto() {
   }
 });
 
+<script>
+function initMobileVariants() {
+  if (window.innerWidth <= 768) { // pantalla mobile
+    const items = document.querySelectorAll('.item.has-variants');
+
+    items.forEach(item => {
+      const images = item.querySelectorAll('img');
+      const indicators = item.querySelectorAll('.variant-indicators span');
+      let current = 0;
+
+      // loop automático
+      setInterval(() => {
+        // ocultar todas las imágenes
+        images.forEach(img => img.style.opacity = 0);
+        // mostrar la actual
+        images[current].style.opacity = 1;
+
+        // actualizar indicadores
+        if (indicators.length) {
+          indicators.forEach((span, idx) => {
+            span.style.opacity = idx === current ? 1 : 0.4;
+          });
+        }
+
+        current++;
+        if (current >= images.length) current = 0;
+      }, 3000); // cambia cada 3 segundos (ajustable)
+    });
+  }
+}
+
+window.addEventListener('load', initMobileVariants);
+window.addEventListener('resize', initMobileVariants);
+</script>
 
 </script>
 </body>
