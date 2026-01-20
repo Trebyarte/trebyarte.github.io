@@ -647,17 +647,30 @@ body.faq-open .faq {
 
 /* INDICADOR DE VARIANTES */
 .item.has-variants .product-image::after {
-  content: " ";
+  content: "";
   position: absolute;
   top: 8px;
   right: 8px;
   width: 12px;
   height: 12px;
-  background-color: rgba(200, 180, 150, 0.8); /* sutil y elegante */
+  background-color: rgba(200, 180, 150, 0.8);
   border-radius: 50%;
   z-index: 2;
-  pointer-events: none; /* no interfiere con hover */
+  pointer-events: none;
 }
+
+/* Para 2 variantes → 2 círculos */
+.item.has-variants.has-2-variants .product-image::after {
+  content: " ";
+  box-shadow: -16px 0 rgba(200, 180, 150, 0.8);
+}
+
+/* Para 3 variantes → 3 círculos */
+.item.has-variants.has-3-variants .product-image::after {
+  content: " ";
+  box-shadow: -16px 0 rgba(200, 180, 150, 0.8), -32px 0 rgba(200, 180, 150, 0.8);
+}
+
 
 
 
