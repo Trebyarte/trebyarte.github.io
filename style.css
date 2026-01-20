@@ -845,4 +845,7 @@ body.faq-open .faq {
   .footer-sub {
     font-size: 12px;
   }
+    .item.has-variants .product-image img {
+    transition: opacity 0.6s ease; /* más rápido para mobile */
+  }
 }
