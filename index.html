@@ -529,6 +529,45 @@ function animateManifesto() {
     animateFaq();
   }
 });
+// === LOOP AUTOMÁTICO PARA MOBILE ===
+function initMobileLoops() {
+  if (window.innerWidth <= 768) { // solo para pantallas pequeñas
+    document.querySelectorAll(".item.has-variants").forEach(item => {
+      const imgs = item.querySelectorAll(".product-image img");
+      const indicators = item.querySelectorAll(".variant-indicators span");
+      let current = 0;
+
+      // Inicializamos visibilidad
+      imgs.forEach((img, i) => img.style.opacity = i === 0 ? "1" : "0");
+      indicators.forEach((span, i) => span.classList.toggle("active", i === 0));
+
+      setInterval(() => {
+        // ocultar imagen actual
+        imgs[current].style.opacity = "0";
+        indicators[current]?.classList.remove("active");
+
+        // siguiente imagen
+        current = (current + 1) % imgs.length;
+
+        // mostrar imagen nueva
+        imgs[current].style.opacity = "1";
+        indicators[current]?.classList.add("active");
+      }, 3000); // cambia cada 3 segundos, podés ajustar
+    });
+  }
+}
+
+// inicializamos al cargar
+window.addEventListener("load", initMobileLoops);
+
+// reiniciar si se hace resize (opcional)
+window.addEventListener("resize", () => {
+  // para simplificar, recargamos la página al cambiar entre desktop/mobile
+  if ((window.innerWidth <= 768 && !window.mobileLoopActive) || 
+      (window.innerWidth > 768 && window.mobileLoopActive)) {
+    window.location.reload();
+  }
+});
 
 
 </script>
