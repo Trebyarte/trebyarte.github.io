@@ -676,11 +676,7 @@ body.faq-open .faq {
 }
 
 /* Hover – efecto de resalte */
-.item.has-variants:hover .variant-indicators span {
-  transform: scale(1.4);
-  background-color: rgba(255,255,255,1);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-}
+
 
 
 /* Hover efecto de resaltado */
@@ -721,11 +717,7 @@ body.faq-open .faq {
   pointer-events: none;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.item.has-variants.has-3-variants:hover .product-image .indicator-third {
-  transform: scale(1.4);
-  background-color: rgba(255,255,255,1);
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
-}
+
 
 
 
