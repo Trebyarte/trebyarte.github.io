@@ -317,6 +317,24 @@ document.addEventListener("click", (e) => {
     }
   });
   const items = document.querySelectorAll(".item");
+  // === GENERAR INDICADORES SEGÚN CANTIDAD DE VARIANTES ===
+document.querySelectorAll(".item.has-variants").forEach(item => {
+  const imgs = item.querySelectorAll(".product-image img");
+  const indicatorsContainer = item.querySelector(".variant-indicators");
+
+  // Limpiar indicadores existentes
+  indicatorsContainer.innerHTML = "";
+
+  // Crear un círculo por cada imagen (cada variante)
+  imgs.forEach(() => {
+    const span = document.createElement("span");
+    indicatorsContainer.appendChild(span);
+  });
+
+  // Ajustar clase según cantidad de variantes (para CSS si hace falta)
+  indicatorsContainer.className = `variant-indicators has-${imgs.length}-variants`;
+});
+
   const categoryTitle = document.getElementById("categoryTitle");
   const homeLink = document.getElementById("homeLink");
 const categoryNames = {
