@@ -592,7 +592,7 @@ body.faq-open .faq {
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.4s ease;
+  transition: opacity 3s ease;
 }
 
 
