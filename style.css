@@ -667,6 +667,15 @@ body.faq-open .faq {
   pointer-events: none;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
+/* =========================
+   VARIANTES – TRANSICIÓN PC (FIX FINAL)
+========================= */
+
+.item.has-variants .product-image img {
+  transition: opacity 3s ease !important;
+}
+
+
 
 
 
