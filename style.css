@@ -99,8 +99,8 @@ header {
   opacity: 0;                 /* 👈 oculto al inicio */
   pointer-events: none;       /* 👈 no interfiere */
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 1.5s ease,
+    transform 1.5s ease;
 
   z-index: 900; /* debajo del menú, arriba del contenido */
 }
