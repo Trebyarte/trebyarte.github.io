@@ -629,6 +629,17 @@ item.addEventListener("mouseenter", () => {
 
 window.addEventListener("DOMContentLoaded", initVariantLoops);
 
+  const infoCloud = document.getElementById("infoCloud");
+
+window.addEventListener("load", () => {
+  infoCloud.classList.add("visible");
+
+  setTimeout(() => {
+    infoCloud.classList.remove("visible");
+  }, 5500);
+});
+
+
 
 </script>
 </body>
