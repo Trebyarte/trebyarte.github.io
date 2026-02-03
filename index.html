@@ -418,18 +418,20 @@ const itemsObserver = new IntersectionObserver(
 items.forEach(item => itemsObserver.observe(item));
   
 function updateCategoryTitle(filter) {
+  categoryTitle.classList.remove("visible");
+
   if (!filter || filter === "all") {
-    categoryTitle.style.opacity = "0";
-    categoryTitle.style.transform = "translateY(-6px)";
     return;
   }
 
   const title = categoryNames[filter] || filter;
-
   categoryTitle.textContent = title;
-  categoryTitle.style.opacity = "1";
-  categoryTitle.style.transform = "translateY(0)";
+
+  // forzar reflow para reanimar
+  void categoryTitle.offsetWidth;
+  categoryTitle.classList.add("visible");
 }
+
   
   const gallery = document.querySelector(".gallery");
   const manifesto = document.getElementById("manifesto");
