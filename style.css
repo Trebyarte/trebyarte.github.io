@@ -283,17 +283,24 @@ header {
   font-family: 'Nova Square', sans-serif;
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+
+  font-weight: 300;
+  letter-spacing: 0.08em;
+
   text-align: center;
   margin: 32px 0 24px;
   color: #777;
-  opacity: 0;
 
-  transform: translateY(-6px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transition: letter-spacing 0.6s ease, opacity 0.6s ease;
 
   pointer-events: none;
 }
+.category-title.visible {
+  opacity: 1;
+  letter-spacing: 0.14em;
+}
+
 
 /* GALERÍA */
 .gallery {
