@@ -70,6 +70,36 @@ header {
   opacity: 1;
 }
 
+/* =========================
+   INFO CLOUD
+========================= */
+
+.info-cloud {
+  position: fixed;
+  top: 64px; /* justo debajo del header desktop */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+  max-width: 900px;
+
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 14px 18px;
+
+  font-family: 'Nova Square', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #111;
+
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  z-index: 900; /* debajo del menú, arriba del contenido */
+}
+
+
 /* MENU */
 .menu-toggle {
   width: 22px;
@@ -707,6 +737,13 @@ body.faq-open .faq {
     width: 18px;
     height: 18px;
   }
+
+  .info-cloud {
+  top: 56px; /* header mobile */
+  font-size: 13px;
+  padding: 12px 14px;
+}
+
   .menu {
     top: 0;
     right: 0;
