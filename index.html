@@ -444,6 +444,9 @@ homeLink.addEventListener("click", () => {
   applyFilter("all");
 
   window.scrollTo({ top: 0, behavior: "smooth" });
+
+ showInfoCloud();
+
 });
 
 
@@ -630,26 +633,31 @@ item.addEventListener("mouseenter", () => {
 window.addEventListener("DOMContentLoaded", initVariantLoops);
 
   const infoCloud = document.getElementById("infoCloud");
+function showInfoCloud() {
+  const cloud = document.getElementById("infoCloud");
+  if (!cloud) return;
 
-window.addEventListener("load", () => {
-  infoCloud.classList.add("visible");
+  // ❌ NO mostrar en FAQ ni Manifesto
+  if (
+    document.body.classList.contains("faq-open") ||
+    document.body.classList.contains("manifesto-open")
+  ) {
+    cloud.classList.remove("visible");
+    return;
+  }
+
+  // Reiniciar animación
+  cloud.classList.remove("visible");
+  void cloud.offsetWidth;
+  cloud.classList.add("visible");
 
   setTimeout(() => {
-    infoCloud.classList.remove("visible");
+    cloud.classList.remove("visible");
   }, 5500);
-});
+}
+window.addEventListener("load", showInfoCloud);
 
-    document.addEventListener("DOMContentLoaded", () => {
-    const cloud = document.getElementById("infoCloud");
 
-    // mostrar
-    cloud.classList.add("visible");
-
-    // ocultar después de X ms
-    setTimeout(() => {
-      cloud.classList.remove("visible");
-    }, 6000); // ajustá este tiempo si querés
-  });
 
 
 </script>
