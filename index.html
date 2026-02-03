@@ -639,6 +639,17 @@ window.addEventListener("load", () => {
   }, 5500);
 });
 
+    document.addEventListener("DOMContentLoaded", () => {
+    const cloud = document.getElementById("infoCloud");
+
+    // mostrar
+    cloud.classList.add("visible");
+
+    // ocultar después de X ms
+    setTimeout(() => {
+      cloud.classList.remove("visible");
+    }, 6000); // ajustá este tiempo si querés
+  });
 
 
 </script>
